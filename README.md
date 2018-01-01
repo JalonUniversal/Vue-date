@@ -1,38 +1,35 @@
-# Vue-cookies
+# Vue-date
 ## A smart vue-plugin for operating cookie in your project
 
 ## How to use
-npm install vue-cookies -S
+npm install vue-date -S
+## Details
+this plugin apply abilities to operate date object in your own vue program;
+now first get the date
 
-## In your main.js / index.js
-const Vue = require('vue'); <br/>
-const vueCookie = require('vue-cookie');
-// To use this plugin
-Vue.use(vueCookie);
+### get instance
+import Vue from 'vue';
+import date from 'vue-date';
+Vue.use(date);
 
-### Usage
-#### Get cookie value
-this.$cookie.get('vue');
-// get the value : "Vue is great"
+### now ?
+const now = this.$date.now();
 
-#### Set cookie value
-##### Withing Object
-this.$cookie.set({
-  name: 'Vue',
-  value: "Vue is great"
-});
-// set the value : "Vue is great"
+### date ?
+const date = this.$date.date();
 
-##### Withing Array
-this.$cookie.set({
-  name: 'Vue',
-  value: "Vue is great"
-}, {
-  name: "React",
-  value: "React is great"
-});
-// set the value : "Vue is great" and "React is great"
+### complete date object / array
+const complete_date = this.$date.genDate(); 
+// got {
+          year: 2017,
+          month: 12,
+          date: 31,
+          day: 31,
+          sec: 219034345
+        }
+// get array when do like this
+const complete_date_array = this.$date.genDate([]);
+// got [2017, 12, 31, 31, 219034345]
 
-#### Delete cookie value
-this.$cookie.delete('Vue');
-// delete the value "Vue is great"
+### to be continue...
+
